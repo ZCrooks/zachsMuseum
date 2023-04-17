@@ -1,0 +1,53 @@
+// h1 - 96 px - Varta Bold
+// h2 - 80 px - Varta Bold
+// p - 40 px - Inter regular
+// form select/button  - 40 px - Inter semi-bold
+// gallery-title - 50 px - Inter semi-bold
+
+// FONT SIZE, STYLES, COLORS
+h1, h2 {
+   font-size: 5rem; 
+   font-family: Varta;
+}
+
+h2, label {
+    color: $primaryColor;
+}
+
+p, button, a, label{
+    font-family: Inter;
+    font-size: 2.5rem;
+}
+
+.gallery-title {
+    font-size: 3.1rem;
+}
+
+a, button {
+    background-color: $quaternaryColor;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+// BACKGROUND COLORS 
+header {
+    background-color: $primaryColor;
+}
+
+.content {
+    background-color: $resultsColor;
+}
+
+.form {
+    background-color: $secondaryColor;
+}
+
+.gallery {
+    background: $tertiaryColor;
+}
+
+.results-header {
+    background-image: url(../../assets/art-gallery.jpeg);
+    background-size: cover;
+    min-height: 50vh;
+}
