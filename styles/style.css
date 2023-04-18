@@ -231,6 +231,12 @@ img {
   padding: 0;
 }
 
+.wrapper-results {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 h1, h2 {
   font-size: 5rem;
   font-family: Varta;
@@ -270,12 +276,6 @@ header {
 
 .gallery {
   background: #865746;
-}
-
-.results-header {
-  background-image: url(../../assets/art-gallery.jpeg);
-  background-size: cover;
-  min-height: 50vh;
 }
 
 footer {
@@ -341,12 +341,12 @@ footer {
   }
 }
 
-.wrapper-content {
+.content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.wrapper-content .description {
+.content .description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -356,16 +356,16 @@ footer {
           flex-direction: column;
   width: 60%;
 }
-.wrapper-content .description .content-img {
+.content .description .content-img {
   background-image: url("./../assets/pexels-diego-mqz-5972293.jpeg");
   min-height: 40vh;
   background-size: cover;
   background-position: bottom;
 }
-.wrapper-content .description p {
+.content .description p {
   margin: 20px;
 }
-.wrapper-content .form {
+.content .form {
   width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -378,7 +378,7 @@ footer {
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
-.wrapper-content .form form {
+.content .form form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -390,7 +390,7 @@ footer {
       -ms-flex-align: center;
           align-items: center;
 }
-.wrapper-content .form form label {
+.content .form form label {
   padding-top: 20px;
   padding-bottom: 20px;
   display: -webkit-box;
@@ -401,13 +401,38 @@ footer {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.wrapper-content .form form button:hover {
+.content .form form button:hover {
   background-color: #865746;
   cursor: pointer;
 }
-.wrapper-content .form formbutton:focus {
+.content .form formbutton:focus {
   background-color: #865746;
   cursor: pointer;
+}
+
+.results-header {
+  background-image: url(../../assets/art-gallery.jpeg);
+  background-size: cover;
+  background-position: 20%;
+  min-height: 40vh;
+}
+
+.wrapper-results {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper-results a {
+  width: 13%;
+  text-decoration: none;
 }
 
 footer {

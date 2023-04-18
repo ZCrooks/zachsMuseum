@@ -1,0 +1,17 @@
+.results-header {
+    background-image: url(../../assets/art-gallery.jpeg);
+    background-size: cover;
+    background-position: calc(20%);
+    min-height: 40vh;
+}
+
+.wrapper-results {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & a {
+        width: 13%;
+        text-decoration: none;
+    }
+}
