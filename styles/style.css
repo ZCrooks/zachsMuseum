@@ -231,7 +231,7 @@ img {
   padding: 0;
 }
 
-.wrapper-results {
+.wrapper-results, .wrapper-form {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -391,16 +391,8 @@ footer {
       -ms-flex-align: center;
           align-items: center;
 }
-.content .form form label {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.content .form form button {
+  margin-top: 20px;
 }
 .content .form form button:hover {
   background-color: #865746;
@@ -409,6 +401,15 @@ footer {
 .content .form formbutton:focus {
   background-color: #865746;
   cursor: pointer;
+}
+.content .form form select {
+  height: 40px;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+.content .form form label {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .results-header {
@@ -437,7 +438,7 @@ footer {
 }
 
 footer {
-  height: 3vh;
+  height: 5vh;
 }
 footer p {
   text-align: center;
