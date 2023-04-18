@@ -226,6 +226,11 @@ img {
   display: block;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 h1, h2 {
   font-size: 5rem;
   font-family: Varta;
@@ -248,7 +253,7 @@ a, button {
   background-color: #DFBA89;
   color: black;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 header {
@@ -271,6 +276,10 @@ header {
   background-image: url(../../assets/art-gallery.jpeg);
   background-size: cover;
   min-height: 50vh;
+}
+
+footer {
+  background-color: #7b1313;
 }
 
 .landing-page {
@@ -330,4 +339,82 @@ header {
   60% {
     -webkit-transform: translateY(-15px);
   }
+}
+
+.wrapper-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.wrapper-content .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+}
+.wrapper-content .description .content-img {
+  background-image: url("./../assets/pexels-diego-mqz-5972293.jpeg");
+  min-height: 40vh;
+  background-size: cover;
+  background-position: bottom;
+}
+.wrapper-content .description p {
+  margin: 20px;
+}
+.wrapper-content .form {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.wrapper-content .form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper-content .form form label {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrapper-content .form form button:hover {
+  background-color: #865746;
+  cursor: pointer;
+}
+.wrapper-content .form formbutton:focus {
+  background-color: #865746;
+  cursor: pointer;
+}
+
+footer {
+  height: 3vh;
+}
+footer p {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
 }

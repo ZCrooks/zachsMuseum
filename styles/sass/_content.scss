@@ -1,0 +1,43 @@
+.wrapper-content {
+    display: flex;
+    & .description {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        & .content-img {
+           background-image: url("./../assets/pexels-diego-mqz-5972293.jpeg");
+           min-height: 40vh;
+           background-size: cover;
+           background-position: bottom;
+        }
+        & p {
+            margin: 20px;
+        }
+    } 
+    & .form {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: space-around;
+        & form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & label {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+            }
+            & button:hover{
+                background-color: $tertiaryColor;
+                cursor: pointer;
+            }
+            &button:focus {
+                background-color: $tertiaryColor;
+                cursor: pointer;
+            }
+        }
+    }
+}
