@@ -1,3 +1,6 @@
+.gallery {
+    display: none;
+}
 .results-header {
     background-image: url(../../assets/art-gallery.jpeg);
     background-size: cover;
@@ -6,7 +9,7 @@
 }
 
 .wrapper-results {
-    height: 100vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

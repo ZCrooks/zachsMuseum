@@ -35,7 +35,7 @@
     <!-- MAIN CONTENT -->
     <main id="content" class="content">
         <!-- MAIN CONTENT WRAPPER -->
-        <div class="content">
+        <div class="intro">
             <!-- MAIN TEXT CONTENT -->
             <div class="description">
                 <div class="content-img">
@@ -46,7 +46,7 @@
             <div class="form">
                 <h2>ZACH'S VIRTUAL MUSEUM</h2>
                 <form action="GET">
-                    <label for="department">DEPARTMENT
+                    <label  for="department">DEPARTMENT
                         <select name="" type="text" id="department">
                             <option value disabled selected>Please select a Department</option>
                             <option value="African Art">African Art</option>
@@ -72,19 +72,26 @@
                             <option value="Textiles">Textiles</option>
                         </select>
                     </label>
-                    <!-- <label for="">TIME PERIOD
-                        <select name="" id="">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
-                    </label> -->
-                    <button class="submit">SEARCH</button>
+                    <button onclick="scrollToElement()" class="submit">SEARCH</button>
                 </form>
             </div>   
         </div> <!-- MAIN CONTENT WRAPPER ENDS -->
+    <section class="gallery">
+        <header class="results-header">
+        </header>
+        <div id="results" class="results">
+            <!-- MAIN RESULTS SECTION -->
+            <div class="wrapper-results">
+                <h1 class="gallery-title" id="title-gallery"></h1>
+        
+                <!-- CAROUSEL OF ARTPIECES -->
+                <ul class="carousel"></ul>
+        
+                <!-- RESET LINK -->
+                <a href="./index.html">RESET</a>
+            </div> <!-- GALLERY WRAPPER ENDS-->
+        </div>
+    </section>
     </main>
     <!-- FOOTER -->
     <footer>

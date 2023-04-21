@@ -274,7 +274,7 @@ header {
   background-color: #115399;
 }
 
-.gallery {
+.results {
   background: #865746;
 }
 
@@ -341,13 +341,13 @@ footer {
   }
 }
 
-.content {
+.intro {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   min-height: 97vh;
 }
-.content .description {
+.intro .description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -357,16 +357,16 @@ footer {
           flex-direction: column;
   width: 60%;
 }
-.content .description .content-img {
+.intro .description .content-img {
   background-image: url("./../assets/gallery-interior.jpg");
   min-height: 40vh;
   background-size: cover;
   background-position: 50%;
 }
-.content .description p {
+.intro .description p {
   margin: 20px;
 }
-.content .form {
+.intro .form {
   width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -379,7 +379,7 @@ footer {
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
-.content .form form {
+.intro .form form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -391,25 +391,29 @@ footer {
       -ms-flex-align: center;
           align-items: center;
 }
-.content .form form button {
+.intro .form form button {
   margin-top: 20px;
 }
-.content .form form button:hover {
+.intro .form form button:hover {
   background-color: #865746;
   cursor: pointer;
 }
-.content .form formbutton:focus {
+.intro .form formbutton:focus {
   background-color: #865746;
   cursor: pointer;
 }
-.content .form form select {
+.intro .form form select {
   height: 40px;
   font-size: 1.5rem;
   margin-top: 20px;
 }
-.content .form form label {
+.intro .form form label {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.gallery {
+  display: none;
 }
 
 .results-header {
@@ -420,7 +424,7 @@ footer {
 }
 
 .wrapper-results {
-  height: 100vh;
+  height: 75vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
