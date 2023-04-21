@@ -358,10 +358,10 @@ footer {
   width: 60%;
 }
 .content .description .content-img {
-  background-image: url("./../assets/pexels-diego-mqz-5972293.jpeg");
+  background-image: url("./../assets/gallery-interior.jpg");
   min-height: 40vh;
   background-size: cover;
-  background-position: bottom;
+  background-position: 50%;
 }
 .content .description p {
   margin: 20px;
