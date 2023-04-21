@@ -253,6 +253,7 @@ p, button, a, label {
 
 .gallery-title {
   font-size: 3.1rem;
+  text-align: center;
 }
 
 a, button {
@@ -415,16 +416,14 @@ footer {
 .gallery {
   display: none;
 }
-
-.results-header {
+.gallery .results-header {
   background-image: url(../../assets/art-gallery.jpeg);
   background-size: cover;
   background-position: 20%;
   min-height: 40vh;
 }
-
-.wrapper-results {
-  height: 75vh;
+.gallery .wrapper-results {
+  height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -436,9 +435,14 @@ footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.wrapper-results a {
+.gallery .wrapper-results a {
   width: 13%;
   text-decoration: none;
+}
+.gallery .listBox {
+  width: 250px;
+  height: 250px;
+  background-color: #F6ECDB;
 }
 
 footer {
