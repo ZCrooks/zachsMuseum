@@ -13,7 +13,12 @@ app.getData = (department) => {
     })
     fetch(url)
         .then((res) => {
-            return res.json();
+            if (res.ok) {
+                console.log(res);
+                return res.json();
+            }   else {
+                throw new Error(res.statusText);
+            } 
         })
         .then ((jsonResult) => {
             // array of all Museum results
@@ -26,6 +31,11 @@ app.getData = (department) => {
             const array = data.slice(0, i);
             // display;
             app.displayData(array);
+        })
+        .catch((e) => {
+            if (e.message === `"ERROR getting artwork data`) {
+                alert (`We're sorry - the data you were looking for could not be generated!`)
+            }
         })
 }
 
