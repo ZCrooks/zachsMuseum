@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Varta:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3cacf8891d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" type="text/css" href="./Glider.js-master/glider.css">
+    <script src="./../zachsMuseum/Glider.js-master/glider.js"></script>
 </head>
 <body>
     <!-- INTRO PAGE -->
@@ -37,6 +39,7 @@
         <!-- MAIN CONTENT WRAPPER -->
         <div class="intro">
             <!-- MAIN TEXT CONTENT -->
+
             <div class="description">
                 <div class="content-img">
                 </div>
@@ -72,7 +75,7 @@
                         </select>
                     </label>
                     <button class="submit">SEARCH</button>
-                </form>
+                </form>      
             </div>   
         </div> <!-- MAIN CONTENT WRAPPER ENDS -->
         <section class="gallery">
@@ -82,12 +85,16 @@
                 <!-- MAIN RESULTS SECTION -->
                 <div class="wrapper-results">
                     <h1 class="gallery-title" id="gallery-title"></h1>
-            
-                    <!-- CAROUSEL OF ARTPIECES -->
-                    <ul class="carousel"></ul>
-            
+                    <a href="#content" class="reset">RESET</a>
+                    <div class="glider-contain">
+                        <div class="glider">
+                        </div>
+                        <button aria-label="Previous" class="glider-prev">«</button>
+                        <button aria-label="Next" class="glider-next">»</button>
+                        <div role="tablist" class="dots"></div>
+                    </div>
                     <!-- RESET LINK -->
-                    <a href="./index.html">RESET</a>
+                    
                 </div> <!-- GALLERY WRAPPER ENDS-->
             </div>
         </section>
@@ -98,4 +105,5 @@
     </footer>
 </body>
 <script src="./script.js"></script>
+
 </html>

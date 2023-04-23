@@ -9,7 +9,7 @@ app.getData = (department) => {
     // ensure I am only grabbing Pieces with an image to feature
     url.search = new URLSearchParams({
         has_image: 1,
-        department: department
+        department: department,
     })
     fetch(url)
         .then((res) => {
@@ -29,24 +29,32 @@ app.getData = (department) => {
         })
 }
 
-// country
-app.displayData = (artArray) => {
-    // Target node
-    const carousel = document.querySelector(`.carousel`);
-    // Fresh search query with each selection
-    carousel.innerHTML = ``;
-    // Build Webpage content using the data
-    artArray.forEach((piece) => {
-        // LI
-        const item = document.createElement(`li`);
+// METHOD TO DISPLAY DATA
+app.displayData = (artArray) => {  
+    // LIST CONTAINER
+    const carousel = document.querySelector(`.glider`);
 
-        // LIST CONTAINER
-        const container = document.createElement(`div`);
-        container.classList.add(`listBox`);
+    // ITERATE AND PROVIDE VALUES TO APPEND TO PAGE FOR EACH ART PIECE
+    artArray.forEach((piece) => {
+
+        // Create Div Container for Item
+        const glider = document.createElement(`div`);
+        glider.style.
+        backgroundColor = `black`;
+        glider.style.minWidth = `30%`
+        glider.style.color = `white`;
+        glider.style.margin = `5px`
+        glider.style.padding = `20px`
+        glider.style.borderRadius = `10px`
+        glider.style.fontFamily = `Varta`;
+    
+
 
         // PIECE TITLE
         const title = document.createElement(`h3`);
-        title.classList.add(`h3`);
+        title.style.fontSize = `20px`;
+        title.style.textAlign = `center`;
+        title.style.marginBottom = `10px`;
         title.innerText = piece.title;
 
         // PIECE IMAGE
@@ -54,35 +62,46 @@ app.displayData = (artArray) => {
         image.src = piece.images.web.url;
         image.alt = piece.images.web.filename;
         
-        // PIECE MEASUREMENTS
-        const measurements = document.createElement(`p`);
-        measurements.innerText = piece.measurements;
 
-        // PIECE TYPE
+        // PIECE TYPES
         const type = document.createElement(`p`);
+        type.style.fontSize=`15px`;
         type.innerText = piece.type;
+            
 
-        // PIECE DESCRIPTION
-        const description = document.createElement(`p`);
-        description.innerText = piece.wall_description;
+        // PIECE CULTURE
+        const culture = document.createElement(`p`);
+        culture.style.fontSize = `15px`;
+        culture.style.marginBottom = `10px`
+        culture.innerText = piece.culture[0];  
 
-        
-        // Append to div container 
-        container.appendChild(title);
-        container.appendChild(image);
-        container.appendChild(measurements);
-        container.appendChild(type);
-        container.appendChild(description);
 
-        // Collect all elements together
-        item.appendChild(container);
+        // PIECE URL
+        const url = document.createElement(`a`);
+        url.innerText = `Click here for more info`
+        url.href = piece.url;
+        url.target=`_blank`;
+        url.style.fontSize = `20px`;
+        url.style.padding = `1px`;
+            
+        // BRING ELEMENTS TOGETHER
+        glider.appendChild(title);
+        glider.appendChild(image);
+        glider.appendChild(type);
+        glider.appendChild(culture);
+        glider.appendChild(url);
 
-        // Amend to carousel
-        carousel.appendChild(item);
-        
-        
+        // APPEND TO SLIDER ON PAGE
+        carousel.appendChild(glider);
+    })  
+
+    // RESET BUTTON
+    const resetButton = document.querySelector(`.reset`);
+    const resultsPage = document.querySelector(`.gallery`);
+    resetButton.addEventListener(`click`, function(e){
+        carousel.innerHTML = ``;
+        resultsPage.style.display = `none`;
     })
-
 }
 
 // Method to grabs User's dropdown form selection
@@ -94,21 +113,19 @@ app.formInput = () => {
         // Grab user's department selection
         const department = document.querySelector(`#department`).value;
         app.getData(department);
-
         // Make Gallery/results section visible
         const gallery = document.querySelector(`.gallery`)
         gallery.style.display = `inline`;
         // Call Scroll Method
-        app.scrollToElement();
+        app.scrollToResults();
         // Make department visible
         const h1 = document.getElementById(`gallery-title`);
         h1.innerHTML = department;
     });
 }
 
-
 // Method to allow smooth scroll to results
-app.scrollToElement = () => {
+app.scrollToResults = () => {
     const element = document.querySelector(`.results`)
     element.scrollIntoView({
         behavior:`smooth`,
@@ -117,10 +134,26 @@ app.scrollToElement = () => {
 }
 
 // Use Reset button to go back and make another selection
+const resetButton = document.querySelector(`.reset`)
+resetButton.addEventListener(`click`, function(e) {
+    
+})
 
 app.init = () => {
     app.formInput();
+    new Glider(document.querySelector('.glider'), {
+        slidesToScroll: 1,
+        slidesToShow: 5.5,
+        draggable: true,
+        dots: '.dots',
+        arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+        },
+        scrollLock: true
+    });
 }
 
 
 app.init();
+
