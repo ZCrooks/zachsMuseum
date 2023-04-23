@@ -6,7 +6,7 @@ const app = {};
 app.getData = (department) => {
     const url = new URL(`https://openaccess-api.clevelandart.org/api/artworks`);
 
-    // ensure I am only grabbing Pieces with an image to feature
+    // Ensure I am only grabbing Pieces with an image to feature
     url.search = new URLSearchParams({
         has_image: 1,
         department: department,
@@ -41,57 +41,71 @@ app.displayData = (artArray) => {
         const glider = document.createElement(`div`);
         glider.style.
         backgroundColor = `black`;
-        glider.style.minWidth = `30%`
+        glider.style.minWidth = `75%`;
         glider.style.color = `white`;
-        glider.style.margin = `5px`
-        glider.style.padding = `20px`
-        glider.style.borderRadius = `10px`
+        glider.style.margin = `5px`;
+        glider.style.padding = `20px`;
+        glider.style.borderRadius = `10px`;
         glider.style.fontFamily = `Varta`;
+        glider.style.display = `flex`;
+        glider.style.justifyContent = `center`;
     
-
-
-        // PIECE TITLE
+        // Grab Piece's Title
         const title = document.createElement(`h3`);
-        title.style.fontSize = `20px`;
-        title.style.textAlign = `center`;
+        title.style.fontSize = `30px`;
         title.style.marginBottom = `10px`;
         title.innerText = piece.title;
 
-        // PIECE IMAGE
+        // Grab Piece's Image
         const image = document.createElement(`img`);
         image.src = piece.images.web.url;
+        image.style.maxHeight = `60%`
         image.alt = piece.images.web.filename;
+        image.style.marginBottom = `50px`;
+        const imageContainer = document.createElement(`div`);
+        imageContainer.appendChild(image);
+        imageContainer.style.position = `relative`;
         
-
-        // PIECE TYPES
-        const type = document.createElement(`p`);
-        type.style.fontSize=`15px`;
-        type.innerText = piece.type;
-            
-
-        // PIECE CULTURE
-        const culture = document.createElement(`p`);
-        culture.style.fontSize = `15px`;
-        culture.style.marginBottom = `10px`
-        culture.innerText = piece.culture[0];  
-
-
-        // PIECE URL
+        // Grab Piece's URL
         const url = document.createElement(`a`);
         url.innerText = `Click here for more info`
         url.href = piece.url;
         url.target=`_blank`;
         url.style.fontSize = `20px`;
-        url.style.padding = `1px`;
-            
-        // BRING ELEMENTS TOGETHER
-        glider.appendChild(title);
-        glider.appendChild(image);
-        glider.appendChild(type);
-        glider.appendChild(culture);
-        glider.appendChild(url);
+        url.style.padding = `5px`;
 
-        // APPEND TO SLIDER ON PAGE
+        // Basic Info Container
+        const infoContainer = document.createElement(`div`);
+        infoContainer.appendChild(title);
+        infoContainer.appendChild(image);
+        infoContainer.appendChild(url);
+        
+        // Grab Piece's 'Type'
+        const type = document.createElement(`p`);
+        type.style.fontSize=`20px`;
+        type.innerText = piece.type;
+            
+        // Grab Piece's Culture
+        const culture = document.createElement(`p`);
+        culture.style.fontSize = `20px`;
+        culture.style.marginBottom = `10px`
+        culture.innerText = piece.culture[0];  
+
+        // Further Details Container
+        const furtherDetailerContainer = document.createElement(`div`);
+        furtherDetailerContainer.style.display = `flex`;
+        furtherDetailerContainer.style.flexDirection = `column`;
+        furtherDetailerContainer.style.justifyContent = `center`;
+        furtherDetailerContainer.style.alignContent = `flex-start`;
+        furtherDetailerContainer.appendChild(type);
+        furtherDetailerContainer.appendChild(culture);
+
+            
+        // Bring Elements Together in an individual Div
+        glider.appendChild(infoContainer);
+        glider.appendChild(furtherDetailerContainer);
+
+        // Append all divs to page Carousel
         carousel.appendChild(glider);
     })  
 
@@ -104,7 +118,7 @@ app.displayData = (artArray) => {
     })
 }
 
-// Method to grabs User's dropdown form selection
+// METHOD TO GRAB USER'S DROPDOWN FORM SELECTION
 app.formInput = () => {
     // User selects a department from dropdown Menu (value)
     const form = document.querySelector(`form`);
@@ -113,18 +127,23 @@ app.formInput = () => {
         // Grab user's department selection
         const department = document.querySelector(`#department`).value;
         app.getData(department);
-        // Make Gallery/results section visible
-        const gallery = document.querySelector(`.gallery`)
-        gallery.style.display = `inline`;
-        // Call Scroll Method
-        app.scrollToResults();
-        // Make department visible
-        const h1 = document.getElementById(`gallery-title`);
-        h1.innerHTML = department;
+        // Prevent empty queries
+        if (department === ``) {
+            alert(`Please select an option to continue!`);
+        } else {
+            // Make Gallery/results section visible
+            const gallery = document.querySelector(`.gallery`)
+            gallery.style.display = `inline`;
+            // Call Scroll Method
+            app.scrollToResults();
+            // Make department visible
+            const h1 = document.getElementById(`gallery-title`);
+            h1.innerHTML = department;
+        } 
     });
 }
 
-// Method to allow smooth scroll to results
+// METHODS TO ALLOW SMOOTH SCROLL TO CONTENT
 app.scrollToResults = () => {
     const element = document.querySelector(`.results`)
     element.scrollIntoView({
@@ -133,27 +152,38 @@ app.scrollToResults = () => {
     });
 }
 
-// Use Reset button to go back and make another selection
-const resetButton = document.querySelector(`.reset`)
-resetButton.addEventListener(`click`, function(e) {
-    
-})
+app.entrance = () => {
+    const enter = document.querySelector(`.enter`)
+    enter.addEventListener(`click`, function(e) {
+        e.preventDefault();
+        app.scrollToContent();
+    });
+}
+app.scrollToContent = () => {
+    const content = document.getElementById(`content`)
+    content.scrollIntoView({
+        behavior: `smooth`,
+        block: `start`
+    });
+}
 
+// INIT FUNCTION
 app.init = () => {
     app.formInput();
+    app.entrance();
     new Glider(document.querySelector('.glider'), {
-        slidesToScroll: 1,
-        slidesToShow: 5.5,
+        slidesToScroll: auto,
+        slidesToShow: auto,
         draggable: true,
         dots: '.dots',
         arrows: {
-            prev: '.glider-prev',
-            next: '.glider-next'
+            prev: document.querySelector(`.glider-prev`),
+            next: document.querySelector(`.glider-next`),
         },
         scrollLock: true
     });
 }
 
-
+// INIT
 app.init();
 

@@ -421,7 +421,7 @@ footer {
   display: none;
 }
 .gallery .results-header {
-  background-image: url(../../assets/art-gallery.jpeg);
+  background-image: url(./../assets/art-gallery.jpeg);
   background-size: cover;
   background-position: 20%;
   min-height: 40vh;
@@ -453,6 +453,9 @@ footer {
 .gallery .wrapper-results a {
   width: 13%;
   text-decoration: none;
+}
+.gallery .glider {
+  height: 75vh;
 }
 
 footer {
