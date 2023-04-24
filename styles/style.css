@@ -441,6 +441,7 @@ footer {
   font-size: 20px;
   position: relative;
   left: 85%;
+  margin-bottom: 10px;
 }
 .gallery .wrapper-results .reset:hover {
   background-color: #865746;

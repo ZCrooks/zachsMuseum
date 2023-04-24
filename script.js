@@ -30,7 +30,6 @@ app.getData = (department) => {
             const array = data.slice(0, i);
             // display;
             app.displayData(array);
-            console.log(array);
         })
         .catch((e) => {
             if (e.message === `"ERROR getting artwork data`) {
@@ -54,7 +53,7 @@ app.displayData = (artArray) => {
         slide.style.color = `white`;
         slide.style.margin = `5px`;
         slide.style.padding = `20px`;
-        slide.style.borderRadius = `10px`;
+        slide.style.borderRadius = `15px`;
         slide.style.fontFamily = `Varta`;
         slide.style.display = `flex`;
         slide.style.justifyContent = `center`;
