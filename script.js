@@ -48,18 +48,17 @@ app.displayData = (artArray) => {
     artArray.forEach((piece) => {
 
         // Create Div Container for Item
-        const glider = document.createElement(`div`);
-        glider.style.
-        backgroundColor = `black`;
-        glider.style.minWidth = `75%`;
-        glider.style.color = `white`;
-        glider.style.margin = `5px`;
-        glider.style.padding = `20px`;
-        glider.style.borderRadius = `10px`;
-        glider.style.fontFamily = `Varta`;
-        glider.style.display = `flex`;
-        glider.style.justifyContent = `center`;
-        glider.style.alignItems = `center`;
+        const slide = document.createElement(`div`);
+        slide.style.backgroundColor = `black`;
+        slide.style.minWidth = `75%`;
+        slide.style.color = `white`;
+        slide.style.margin = `5px`;
+        slide.style.padding = `20px`;
+        slide.style.borderRadius = `10px`;
+        slide.style.fontFamily = `Varta`;
+        slide.style.display = `flex`;
+        slide.style.justifyContent = `center`;
+        slide.style.alignItems = `center`;
     
         // Grab Piece's Image and put in Container
         const image = document.createElement(`img`);
@@ -69,10 +68,10 @@ app.displayData = (artArray) => {
         imageContainer.appendChild(image);
         imageContainer.style.width = `50%`;
         
-    
         // Grab Piece's Title
         const title = document.createElement(`h3`);
-        title.style.fontSize = `30px`;
+        title.className = `object-title`;
+        title.style.fontSize = `25px`;
         title.style.marginBottom = `10px`;
         title.innerText = piece.title;
     
@@ -98,7 +97,7 @@ app.displayData = (artArray) => {
         url.innerText = `Click here for more info`
         url.href = piece.url;
         url.target=`_blank`;
-        url.style.fontSize = `20px`;
+        url.style.fontSize = `15px`;
         url.style.padding = `5px`;
         url.style.marginTop = `10px`;
         url.style.width = `80%`;
@@ -110,7 +109,7 @@ app.displayData = (artArray) => {
         contentContainer.style.justifyContent = `center`;
         contentContainer.style.alignContent = `flex-start`;
         contentContainer.style.width = `50%`;
-        contentContainer.style.marginLeft = `20%`;
+        contentContainer.style.marginLeft = `5%`;
         contentContainer.appendChild(title);
         contentContainer.appendChild(type);
         contentContainer.appendChild(culture);
@@ -118,11 +117,11 @@ app.displayData = (artArray) => {
         contentContainer.appendChild(url);
 
         // Bring Elements Together in an individual Div
-        glider.appendChild(imageContainer);
-        glider.appendChild(contentContainer);
+        slide.appendChild(imageContainer);
+        slide.appendChild(contentContainer);
 
         // Append all divs to page Carousel
-        carousel.appendChild(glider);
+        carousel.appendChild(slide);
     })  
 
     // RESET BUTTON
@@ -187,19 +186,7 @@ app.scrollToContent = () => {
 app.init = () => {
     app.formInput();
     app.entrance();
-    new Glider(document.querySelector('.glider'), {
-        slidesToScroll: auto,
-        slidesToShow: auto,
-        draggable: true,
-        dots: '.dots',
-        arrows: {
-            prev: document.querySelector(`.glider-prev`),
-            next: document.querySelector(`.glider-next`),
-        },
-        scrollLock: true
-    });
 }
 
 // INIT
 app.init();
-

@@ -9,9 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Varta:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3cacf8891d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./glider.min.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" type="text/css" href="./Glider.js-master/glider.css">
-    <script src="./../zachsMuseum/Glider.js-master/glider.js"></script>
 </head>
 <body>
     <!-- INTRO PAGE -->
@@ -27,8 +26,8 @@
             </div>
         </div>
         <div class="enter">
-            <a href="#content">
-                <i class="fa-solid fa-chevron-down fa-lg" aria-hidden="true">ENTER</i>
+            <a href="#content" aria-hidden="true">
+                <i class="fa-solid fa-chevron-down fa-lg">ENTER</i>
                 <span class="sr-only">Chevron pointing down to next section of the page</span>
             </a>
         </div>
@@ -84,7 +83,6 @@
                 <div class="wrapper-results">
                     <h1 class="gallery-title" id="gallery-title"></h1>
                     <a href="#content" class="reset">RESET</a>
-                    <!-- A very special thanks to Nick Piscitelli's Glider.JS for the Carousel code  -->
                     <div class="glider-contain">
                         <div class="glider">
                         </div>
@@ -102,7 +100,22 @@
     <footer>
         <p>Created by Zachary Crooks ©2023</p>
     </footer>
+    <!-- A very special thanks to Nick Piscitelli's Glider.JS for the Carousel code  -->
+    <script src="./glider.min.js"></script>
+    <script>
+        new Glider(document.querySelector('.glider'), {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: '.dots',
+            draggable: true,
+            arrows: {
+                prev: '.glider-prev',
+                next: '.glider-next'
+            }
+        });
+    </script>
 </body>
 <script src="./script.js"></script>
+
 
 </html> 

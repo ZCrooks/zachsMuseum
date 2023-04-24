@@ -17,13 +17,19 @@
         }
     }
 }
-
 @media (max-width: 1020px) {
    .title {
     flex-direction: column;
    }
 }
 
+@media (max-width: 763px) {
+    header {
+        & h1 {
+            font-size: 4rem;
+        }
+    }
+}
 @media (max-width: 720px) {
     .intro {
         & p {
@@ -33,14 +39,20 @@
     .gallery {
         & .wrapper-results {
             & .reset {
-                position: relative;
-                left: 50%;
-                font-size: 1rem;
+                left: 25%;
+                width: 50%;
             }
         }
     }
 }
 
+@media (max-width: 608px) {
+    header {
+        & h1 {
+            font-size: 3rem;
+        }
+    }       
+}
 @media (max-width: 480px) {
     select {
         width: 75%;
@@ -48,6 +60,11 @@
     footer {
         & p {
             font-size: 1rem;
+        }
+    }
+    header {
+        & h1 {
+            font-size: 2rem;
         }
     }
 }
