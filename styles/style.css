@@ -413,6 +413,10 @@ footer {
   margin-bottom: 20px;
 }
 
+.wrapper-results {
+  height: 110vh;
+}
+
 .results {
   height: 100vh;
 }
