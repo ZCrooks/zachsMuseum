@@ -1,17 +1,44 @@
-.results-header {
-    background-image: url(../../assets/art-gallery.jpeg);
-    background-size: cover;
-    background-position: calc(20%);
-    min-height: 40vh;
+.results {
+    height: 100vh;
 }
 
-.wrapper-results {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    & a {
-        width: 13%;
-        text-decoration: none;
+.gallery {
+    display: none;
+        & .results-header {
+        background-image: url(./../assets/art-gallery.jpeg);
+        background-size: cover;
+        background-position: calc(20%);
+        min-height: 40vh;
+        }
+        & .wrapper-results {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        & .reset {
+            text-align: center;
+            font-size: 20px;
+            position: relative;
+            left: 85%;
+            margin-bottom: 10px;
+        }
+        & .reset:hover {
+            background-color: $tertiaryColor;
+            cursor: pointer;
+        }          
+        
+        & .reset:focus {
+            background-color: $tertiaryColor;
+            cursor: pointer;
+        }          
+        & a {
+            width: 13%;
+            text-decoration: none;
+        }
+    }
+    & .glider {
+        height: 75vh;
     }
 }
+
+
+

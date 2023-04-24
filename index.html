@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Varta:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3cacf8891d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./glider.min.css">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
@@ -25,8 +26,8 @@
             </div>
         </div>
         <div class="enter">
-            <a href="#content">
-                <i class="fa-solid fa-chevron-down fa-lg" aria-hidden="true">ENTER</i>
+            <a href="#content" aria-hidden="true">
+                <i class="fa-solid fa-chevron-down fa-lg">ENTER</i>
                 <span class="sr-only">Chevron pointing down to next section of the page</span>
             </a>
         </div>
@@ -35,31 +36,29 @@
     <!-- MAIN CONTENT -->
     <main id="content" class="content">
         <!-- MAIN CONTENT WRAPPER -->
-        <div class="content">
+        <div class="intro">
             <!-- MAIN TEXT CONTENT -->
             <div class="description">
                 <div class="content-img">
                 </div>
-                <p>Masterpieces of art, the history of human achievement, and displays of aesthetic endeavour. These three components make up a good museum, and I believe this is why I was always enamoured with museums growing up. The prestigious Cleveland Museum of Art in Ohio is one one of the most visited in the world. Choose from one of the museum's many departments, as well your preferred time period on the form to your right to generate TEN random masterpieces from amongst the museum's collection.</p>
+                <p>Masterpieces of art, the history of human achievement, and displays of aesthetic endeavour. These three components make up a good museum, and I believe this is why I was always enamoured with museums growing up. The prestigious Cleveland Museum of Art in Ohio is one one of the most visited in the world. Choose from one of the museum's many departments, as well your preferred time period on the form to your right to generate TEN random masterpieces from amongst the museum's 37,000 + online collection.</p>
             </div>
             <!-- SUBMISSION FORM -->
             <div class="form">
                 <h2>ZACH'S VIRTUAL MUSEUM</h2>
                 <form action="GET">
-                    <label for="department">DEPARTMENT
+                    <label  for="department">DEPARTMENT
                         <select name="" type="text" id="department">
                             <option value disabled selected>Please select a Department</option>
                             <option value="African Art">African Art</option>
                             <option value="American Painting and Sculpture">American Painting and Sculpture</option>
                             <option value="Art of the Americas">Art of the Americas</option>
                             <option value="Chinese Art">Chinese Art</option>
-                            <option value="Contemporary Art">Contemporary Art</option>
                             <option value="Decorative Art and Design">Decorative Art and Design</option>
                             <option value="Drawings">Drawings</option>
                             <option value="Egyptian and Ancient Near Eastern Art">Egyptian and Ancient Near Eastern Art</option>
                             <option value="European Painting and Sculpture">European Painting and Sculpture</option>
                             <option value="Greek and Roman Art">Greek and Roman Art</option>
-                            <option value="Indian and South East Asian Art">Indian and South East Asian Art</option>
                             <option value="Islamic Art">Islamic Art</option>
                             <option value="Japanese Art">Japanese Art</option>
                             <option value="Korean Art">Korean Art</option>
@@ -72,23 +71,51 @@
                             <option value="Textiles">Textiles</option>
                         </select>
                     </label>
-                    <!-- <label for="">TIME PERIOD
-                        <select name="" id="">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select>
-                    </label> -->
                     <button class="submit">SEARCH</button>
-                </form>
+                </form>      
             </div>   
         </div> <!-- MAIN CONTENT WRAPPER ENDS -->
+        <section class="gallery">
+            <header class="results-header">
+            </header>
+            <div id="results" class="results">
+                <!-- MAIN RESULTS SECTION -->
+                <div class="wrapper-results">
+                    <h1 class="gallery-title" id="gallery-title"></h1>
+                    <a href="#content" class="reset">RESET</a>
+                    <div class="glider-contain">
+                        <div class="glider">
+                        </div>
+                        <button aria-label="Previous" class="glider-prev">«</button>
+                        <button aria-label="Next" class="glider-next">»</button>
+                        <div role="tablist" class="dots"></div>
+                    </div>
+                    <!-- RESET LINK -->
+                    
+                </div> <!-- GALLERY WRAPPER ENDS-->
+            </div>
+        </section>
     </main>
     <!-- FOOTER -->
     <footer>
-        <p>Created by Zachary Crooks - 2023</p>
+        <p>Created by Zachary Crooks ©2023</p>
     </footer>
+    <!-- A very special thanks to Nick Piscitelli's Glider.JS for the Carousel code  -->
+    <script src="./glider.min.js"></script>
+    <script>
+        new Glider(document.querySelector('.glider'), {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: '.dots',
+            draggable: true,
+            arrows: {
+                prev: '.glider-prev',
+                next: '.glider-next'
+            }
+        });
+    </script>
 </body>
-</html>
+<script src="./script.js"></script>
+
+
+</html> 
