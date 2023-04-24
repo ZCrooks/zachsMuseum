@@ -63,7 +63,6 @@ app.displayData = (artArray) => {
         const image = document.createElement(`img`);
         image.src = piece.images.web.url;
         image.alt = piece.images.web.filename;
-        image.style.maxWidth = `50%`;
         const imageContainer = document.createElement(`div`);
         imageContainer.appendChild(image);
         imageContainer.style.width = `50%`;
