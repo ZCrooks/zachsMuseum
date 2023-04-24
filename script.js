@@ -14,7 +14,6 @@ app.getData = (department) => {
     fetch(url)
         .then((res) => {
             if (res.ok) {
-                console.log(res);
                 return res.json();
             }   else {
                 throw new Error(res.statusText);
@@ -31,6 +30,7 @@ app.getData = (department) => {
             const array = data.slice(0, i);
             // display;
             app.displayData(array);
+            console.log(array);
         })
         .catch((e) => {
             if (e.message === `"ERROR getting artwork data`) {
@@ -59,37 +59,23 @@ app.displayData = (artArray) => {
         glider.style.fontFamily = `Varta`;
         glider.style.display = `flex`;
         glider.style.justifyContent = `center`;
+        glider.style.alignItems = `center`;
+    
+        // Grab Piece's Image and put in Container
+        const image = document.createElement(`img`);
+        image.src = piece.images.web.url;
+        image.alt = piece.images.web.filename;
+        const imageContainer = document.createElement(`div`);
+        imageContainer.appendChild(image);
+        imageContainer.style.width = `50%`;
+        
     
         // Grab Piece's Title
         const title = document.createElement(`h3`);
         title.style.fontSize = `30px`;
         title.style.marginBottom = `10px`;
         title.innerText = piece.title;
-
-        // Grab Piece's Image
-        const image = document.createElement(`img`);
-        image.src = piece.images.web.url;
-        image.style.maxHeight = `60%`
-        image.alt = piece.images.web.filename;
-        image.style.marginBottom = `50px`;
-        const imageContainer = document.createElement(`div`);
-        imageContainer.appendChild(image);
-        imageContainer.style.position = `relative`;
-        
-        // Grab Piece's URL
-        const url = document.createElement(`a`);
-        url.innerText = `Click here for more info`
-        url.href = piece.url;
-        url.target=`_blank`;
-        url.style.fontSize = `20px`;
-        url.style.padding = `5px`;
-
-        // Basic Info Container
-        const infoContainer = document.createElement(`div`);
-        infoContainer.appendChild(title);
-        infoContainer.appendChild(image);
-        infoContainer.appendChild(url);
-        
+    
         // Grab Piece's 'Type'
         const type = document.createElement(`p`);
         type.style.fontSize=`20px`;
@@ -101,19 +87,39 @@ app.displayData = (artArray) => {
         culture.style.marginBottom = `10px`
         culture.innerText = piece.culture[0];  
 
-        // Further Details Container
-        const furtherDetailerContainer = document.createElement(`div`);
-        furtherDetailerContainer.style.display = `flex`;
-        furtherDetailerContainer.style.flexDirection = `column`;
-        furtherDetailerContainer.style.justifyContent = `center`;
-        furtherDetailerContainer.style.alignContent = `flex-start`;
-        furtherDetailerContainer.appendChild(type);
-        furtherDetailerContainer.appendChild(culture);
+        // Grab Piece's Description
+        const description = document.createElement(`p`);
+        description.style.fontSize = `15px`;
+        description.style.marginTop = `5px`;
+        description.innerText = piece.fun_fact;
+        
+        // Grab Piece's URL
+        const url = document.createElement(`a`);
+        url.innerText = `Click here for more info`
+        url.href = piece.url;
+        url.target=`_blank`;
+        url.style.fontSize = `20px`;
+        url.style.padding = `5px`;
+        url.style.marginTop = `10px`;
+        url.style.width = `80%`;
 
-            
+        // Create a Container for Title, Type, Culture, and Description
+        const contentContainer = document.createElement(`div`);
+        contentContainer.style.display = `flex`;
+        contentContainer.style.flexDirection = `column`;
+        contentContainer.style.justifyContent = `center`;
+        contentContainer.style.alignContent = `flex-start`;
+        contentContainer.style.width = `50%`;
+        contentContainer.style.marginLeft = `20%`;
+        contentContainer.appendChild(title);
+        contentContainer.appendChild(type);
+        contentContainer.appendChild(culture);
+        contentContainer.appendChild(description);
+        contentContainer.appendChild(url);
+
         // Bring Elements Together in an individual Div
-        glider.appendChild(infoContainer);
-        glider.appendChild(furtherDetailerContainer);
+        glider.appendChild(imageContainer);
+        glider.appendChild(contentContainer);
 
         // Append all divs to page Carousel
         carousel.appendChild(glider);

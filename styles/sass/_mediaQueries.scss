@@ -1,0 +1,53 @@
+@media (max-width: 1164px) {
+    .intro {
+        display: flex;
+        flex-direction: column;
+        & h2 {
+            text-align: center;
+        }
+        & .description, .form {
+            width: 100%;
+        }
+    }
+    form {
+        & label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: 1020px) {
+   .title {
+    flex-direction: column;
+   }
+}
+
+@media (max-width: 720px) {
+    .intro {
+        & p {
+            font-size: 2rem;
+        }
+    }
+    .gallery {
+        & .wrapper-results {
+            & .reset {
+                position: relative;
+                left: 50%;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    select {
+        width: 75%;
+    }
+    footer {
+        & p {
+            font-size: 1rem;
+        }
+    }
+}

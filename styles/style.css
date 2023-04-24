@@ -440,7 +440,7 @@ footer {
   text-align: center;
   font-size: 20px;
   position: relative;
-  left: 88%;
+  left: 85%;
 }
 .gallery .wrapper-results .reset:hover {
   background-color: #865746;
@@ -465,4 +465,60 @@ footer p {
   text-align: center;
   color: white;
   font-size: 1.5rem;
+}
+
+@media (max-width: 1164px) {
+  .intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .intro h2 {
+    text-align: center;
+  }
+  .intro .description, .intro .form {
+    width: 100%;
+  }
+  form label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media (max-width: 1020px) {
+  .title {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 720px) {
+  .intro p {
+    font-size: 2rem;
+  }
+  .gallery .wrapper-results .reset {
+    position: relative;
+    left: 50%;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  select {
+    width: 75%;
+  }
+  footer p {
+    font-size: 1rem;
+  }
 }
