@@ -348,7 +348,7 @@ footer {
   display: flex;
   min-height: 97vh;
 }
-.intro .description {
+.intro .description, .intro .object {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -364,7 +364,7 @@ footer {
   background-size: cover;
   background-position: 50%;
 }
-.intro .description p {
+.intro .description p, .intro .object p {
   margin: 20px;
 }
 .intro .form {
@@ -530,8 +530,11 @@ footer p {
   }
 }
 @media (max-width: 480px) {
-  select {
-    width: 75%;
+  .intro p {
+    font-size: 1.5rem;
+  }
+  form .department-type, form .artwork-type {
+    font-size: 1rem !important;
   }
   footer p {
     font-size: 1rem;

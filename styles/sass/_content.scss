@@ -1,7 +1,7 @@
 .intro {
     display: flex;
     min-height: 97vh;
-    & .description {
+    & .description, .object {
         display: flex;
         flex-direction: column;
         width: 60%;

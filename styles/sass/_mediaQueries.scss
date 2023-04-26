@@ -54,8 +54,15 @@
     }       
 }
 @media (max-width: 480px) {
-    select {
-        width: 75%;
+    .intro {
+        & p {
+            font-size: 1.5rem;
+        }
+    }
+    form {
+        & .department-type, .artwork-type {
+            font-size: 1rem !important; 
+        }
     }
     footer {
         & p {

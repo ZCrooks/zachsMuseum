@@ -3,13 +3,14 @@
 const app = {};
 
 // GRAB ARRAY OF ALL AVAILABLE MUSEUM DATA 
-app.getData = (department) => {
+app.getData = (department, type) => {
     const url = new URL(`https://openaccess-api.clevelandart.org/api/artworks`);
 
     // Ensure I am only grabbing Pieces with an image to feature
     url.search = new URLSearchParams({
         has_image: 1,
         department: department,
+        type: type
     })
     fetch(url)
         .then((res) => {
@@ -28,8 +29,19 @@ app.getData = (department) => {
             const randomizer = data.sort(() => 0.5 - Math.random());
             // new array
             const array = data.slice(0, i);
-            // display;
-            app.displayData(array);
+            // Display (if there is 1 or more objects in the Array);
+            if (array.length >= 1) {
+                app.displayData(array);
+                // Error Handling for when there is not at least one array item in returned data 
+            } else {
+                const warning = document.createElement(`h3`);
+                warning.className = `object-title`;
+                warning.style.fontSize = `25px`;
+                warning.style.marginBottom = `10px`;
+                warning.innerText = `We're sorry - no artwork was found for your selections. Please try again!`;
+                const resultsContainer = document.querySelector(`.gallery-title`)
+                resultsContainer.appendChild(warning);
+            }
         })
         .catch((e) => {
             if (e.message === `"ERROR getting artwork data`) {
@@ -139,11 +151,14 @@ app.formInput = () => {
     form.addEventListener(`submit`, function(e){
         e.preventDefault();
         // Grab user's department selection
-        const department = document.querySelector(`#department`).value;
-        app.getData(department);
+        const department = document.querySelector(`#department-type`).value;
+        // Grab user's Object type selection
+        const type = document.querySelector(`#artwork-type`).value;  
+        // Run both selections through the getData Method   
+        app.getData(department, type);
         // Prevent empty queries
-        if (department === ``) {
-            alert(`Please select an option to continue!`);
+        if (department === `` || type === ``) {
+            alert(`Please select both options to continue!`);
         } else {
             // Make Gallery/results section visible
             const gallery = document.querySelector(`.gallery`)
