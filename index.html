@@ -41,14 +41,14 @@
             <div class="description">
                 <div class="content-img">
                 </div>
-                <p>Masterpieces of art, the history of human achievement, and displays of aesthetic endeavour. These three components make up a good museum, and I believe this is why I was always enamoured with museums growing up. The prestigious Cleveland Museum of Art in Ohio is one one of the most visited in the world. Choose from one of the museum's many departments, as well your preferred time period on the form to your right to generate TEN random masterpieces from amongst the museum's 37,000 + online collection.</p>
+                <p>Masterpieces of art, the history of human achievement, and displays of aesthetic endeavour. These three components make up a good museum, and I believe this is why I was always enamoured with museums growing up. The prestigious Cleveland Museum of Art in Ohio is one one of the most visited in the world. Choose from one of the museum's many departments, as well your preferred artwork type on the form to your right to generate up to TEN random masterpieces from amongst the museum's 37,000 + online collection.</p>
             </div>
             <!-- SUBMISSION FORM -->
             <div class="form">
                 <h2>ZACH'S VIRTUAL MUSEUM</h2>
                 <form action="GET">
-                    <label  for="department">DEPARTMENT
-                        <select name="" type="text" id="department">
+                    <label  for="department" class="department">DEPARTMENT
+                        <select name="" type="text" id="department-type" class="department-type">
                             <option value disabled selected>Please select a Department</option>
                             <option value="African Art">African Art</option>
                             <option value="American Painting and Sculpture">American Painting and Sculpture</option>
@@ -69,6 +69,33 @@
                             <option value="Photography">Photography</option>
                             <option value="Prints">Prints</option>
                             <option value="Textiles">Textiles</option>
+                        </select>
+                    </label>
+                    <label for="object" class="object">OBJECT TYPE
+                        <select name="" type="text" id="artwork-type" class="artwork-type">
+                            <option value disabled selected>Please select an Artwork Type</option>
+                            <option value="Painting">Painting</option>
+                            <option value="Sculpture">Sculpture</option>
+                            <option value="Photograph">Photograph</option>
+                            <option value="Amulets">Amulets</option>
+                            <option value="Arms and Armor">Arms and Armor</option>
+                            <option value="Basketry">Basketry</option>
+                            <option value="Carpet">Carpet</option>
+                            <option value="Ceramic">Ceramic</option>
+                            <option value="Coins">Coins</option>
+                            <option value="Cosmetic Objects">Cosmetic Objects</option>
+                            <option value="Drawing">Drawing</option>
+                            <option value="Garment">Garment</option>
+                            <option value="Glass">Glass</option>
+                            <option value="Ivory">Ivory</option>
+                            <option value="Furniture and woodwork">Furniture and woodwork</option>
+                            <option value="Mosaic">Mosaic</option>
+                            <option value="Musical Instrument">Musical Instrument</option>
+                            <option value="Papyri">Papyri</option>
+                            <option value="Print">Print</option>
+                            <option value="Tapestry">Tapestry</option>
+                            <option value="Tool">Tool</option>
+                            <option value="Wood">Wood</option>
                         </select>
                     </label>
                     <button class="submit">SEARCH</button>
