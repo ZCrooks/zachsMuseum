@@ -358,8 +358,8 @@ footer {
           flex-direction: column;
   width: 60%;
 }
-.intro .description .content-img, .intro .object .content-img {
-  background-image: url("./../assets/gallery-interior.jpg");
+.intro .description .content-img {
+  background-image: url("./../assets/gallery-interior.JPG");
   min-height: 40vh;
   background-size: cover;
   background-position: 50%;
@@ -411,6 +411,10 @@ footer {
 .intro .form form label {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.wrapper-results {
+  height: 110vh;
 }
 
 .results {
