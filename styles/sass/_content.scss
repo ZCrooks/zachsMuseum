@@ -4,7 +4,7 @@
     & .description, .object {
         display: flex;
         flex-direction: column;
-        width: 60%;
+        width: 100%;
         & .content-img {
            background-image: url("./../assets/gallery-interior.JPG");
            min-height: 40vh;
